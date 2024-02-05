@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
-  gap: 50,
+  gap: 30,
  },
  plusButton: {
   backgroundColor: '#00bfff',
