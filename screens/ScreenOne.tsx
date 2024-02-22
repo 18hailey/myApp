@@ -1,4 +1,4 @@
-import { Box, Button, Center, Text } from "@gluestack-ui/themed"
+import { Button, Center, Text } from "@gluestack-ui/themed"
 import { NavigationProp, useNavigation } from "@react-navigation/native"
 import { RootStackParamList } from "../types";
 
@@ -11,7 +11,7 @@ export default function ScreenOne() {
             <Text color='$white'>Go To Screen2</Text>
         </Button>
         <Button onPress={() => navigation.navigate('Three')}>
-            <Text color='$white'>Go ToScreen3</Text>
+            <Text color='$white'>Go To Screen3</Text>
         </Button>
     </Center>
   )

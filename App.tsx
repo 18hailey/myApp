@@ -7,7 +7,6 @@ import ScreenThree from "./screens/ScreenThree";
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStackParamList } from "./types";
-import DashboardScreen from "./screens/DashboardScreen";
 
 const Stack = createStackNavigator<RootStackParamList>(); // 라우트 타입 지정(필수)
 
