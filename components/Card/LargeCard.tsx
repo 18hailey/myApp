@@ -32,3 +32,4 @@ export default function LargeCard({ webtoon }: LargeCardProps) {
     </VStack>
   );
 }
+
