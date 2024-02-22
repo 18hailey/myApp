@@ -1,9 +1,15 @@
 import { config } from "@gluestack-ui/config"
-import { GluestackUIProvider, Center, StatusBar, SafeAreaView, ScrollView } from "@gluestack-ui/themed"
+import { GluestackUIProvider, StatusBar, SafeAreaView } from "@gluestack-ui/themed"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { Dimensions } from "react-native"
-import MySwiper from "./components/MySwiper"
-import WebtoonList from "./components/WebtoonList"
+import ScreenOne from "./screens/ScreenOne";
+import ScreenTwo from "./screens/ScreenTwo";
+import ScreenThree from "./screens/ScreenThree";
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { RootStackParamList } from "./types";
+import DashboardScreen from "./screens/DashboardScreen";
+
+const Stack = createStackNavigator<RootStackParamList>(); // 라우트 타입 지정(필수)
 
 const queryClient = new QueryClient();
 
@@ -11,15 +17,32 @@ export default function App() {
   return (
   <QueryClientProvider client={queryClient}>
    <GluestackUIProvider config={config}>
-    <SafeAreaView flex={0} backgroundColor='$backgroundDark900' />
-    <SafeAreaView flex={1} backgroundColor='$skyblue'>
     <StatusBar barStyle='light-content' />
-      <ScrollView width='$full'bg='$backgroundDark900'>
-        <Center width={Dimensions.get('window').width} height={300}>
-          <MySwiper />
-        </Center>
-        <WebtoonList />
-      </ScrollView>
+    <SafeAreaView flex={1} backgroundColor='$backgroundDark900'>
+      <NavigationContainer>
+      <Stack.Navigator initialRouteName='One'>
+        <Stack.Screen 
+          name = 'One'
+          component={ScreenOne}
+          options={{
+            header: () => null,
+          }} />
+        <Stack.Screen 
+          name = 'Two' 
+          component={ScreenTwo}
+          options={{
+            header: () => null,
+        }} />
+        <Stack.Screen 
+          name = 'Three'
+          component={ScreenThree}
+          options={{
+            header: () => null,
+        }} />
+        {/* <Stack.Screen name = 'Four' component={ScreenThree} /> // 타입리스트에 없으면 오류*/} 
+
+      </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaView>
    </GluestackUIProvider>
   </QueryClientProvider>
