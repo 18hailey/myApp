@@ -5,3 +5,9 @@ export interface Webtoon {
     img: string,
     fanCount: number 
 }
+
+export type RootStackParamList = {
+    One: undefined,
+    Two: undefined,
+    Three: undefined
+};
