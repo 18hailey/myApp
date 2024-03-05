@@ -1,4 +1,4 @@
-import { Box, Button, Center, Text } from "@gluestack-ui/themed"
+import { Button, Center, Text } from "@gluestack-ui/themed"
 import { NavigationProp, useNavigation } from "@react-navigation/native"
 import { RootStackParamList } from "../types";
 

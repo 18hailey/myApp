@@ -7,7 +7,7 @@ import ScreenThree from "./screens/ScreenThree";
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStackParamList } from "./types";
-import DashboardScreen from "./screens/DashboardScreen";
+import CounterScreen from "./screens/CounterScreen";
 
 const Stack = createStackNavigator<RootStackParamList>(); // 라우트 타입 지정(필수)
 
@@ -20,7 +20,13 @@ export default function App() {
     <StatusBar barStyle='light-content' />
     <SafeAreaView flex={1} backgroundColor='$backgroundDark900'>
       <NavigationContainer>
-      <Stack.Navigator initialRouteName='One'>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Counter'
+          component={CounterScreen}
+          options={{
+            header: () => null,
+        }}/>
         <Stack.Screen 
           name = 'One'
           component={ScreenOne}
@@ -39,8 +45,6 @@ export default function App() {
           options={{
             header: () => null,
         }} />
-        {/* <Stack.Screen name = 'Four' component={ScreenThree} /> // 타입리스트에 없으면 오류*/} 
-
       </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
