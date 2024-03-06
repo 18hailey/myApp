@@ -11,11 +11,10 @@ export default function LargeCard({ webtoon }: LargeCardProps) {
   return (
     <VStack
         key={webtoon.webtoonId}
-        bg='$backgroundDark900'
+        bg='$backgroundDark950'
         width={Dimensions.get('window').width}
         height='100%'
-        justifyContent='flex-end'
-        position='relative'
+        justifyContent='flex-end'   
     >
       <Image
           alt={webtoon.title}

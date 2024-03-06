@@ -1,9 +1,9 @@
 import { Button, Center, Text } from "@gluestack-ui/themed"
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../types";
+import { CounterScreenParams } from "../types";
 
 export default function ScreenTwo() {
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp<CounterScreenParams>>();
   return (
     <Center bg ='$indigo300' w='$full' h='$full' gap={10}>
         <Text onPress={() => navigation.goBack}>Screen2</Text>
