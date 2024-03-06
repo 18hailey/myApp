@@ -1,12 +1,8 @@
 import  React  from 'react'
 import { useQuery } from "@tanstack/react-query"
-import { Webtoon } from "../../types"
+import { WebtoonResponse } from "../../types"
 import { VStack } from "@gluestack-ui/themed"
 import MediumCard from "../Card/MediumCard"
-
-interface WebtoonResponse {
-    webtoons: Webtoon[];
-}
 
 const fetchWebtoons = async() => { // 비동기 함수, promise 반환
     const response = await fetch('https://korea-webtoon-api.herokuapp.com');
@@ -20,7 +16,7 @@ export default function WebtoonList() {
     });
 
   return (
-    <VStack padding={10} bg='$white' gap={10}> 
+    <VStack padding={10} bg='$backgroundDark950' gap={10}> 
         { data ? data.webtoons.map((webtoon) => (
             <MediumCard key={webtoon.webtoonId} webtoon={webtoon} />
         )) : []}

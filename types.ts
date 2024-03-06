@@ -6,9 +6,18 @@ export interface Webtoon {
     fanCount: number 
 }
 
-export type RootStackParamList = {
+export type CounterScreenParams = {
     Counter: undefined,
     One: undefined,
     Two: undefined,
     Three: undefined
 };
+
+export type ScreensParams = {
+    Home: undefined,
+    Search: undefined
+};
+
+export interface WebtoonResponse {
+    webtoons: Webtoon[];
+  }
