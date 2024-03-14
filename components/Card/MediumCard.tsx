@@ -1,13 +1,17 @@
 import  React  from 'react'
-import { Text, Image, View, HStack, VStack, Icon, StarIcon } from "@gluestack-ui/themed"
-import { Webtoon } from "../../types"
+import { Text, Image, View, HStack, Icon, StarIcon } from "@gluestack-ui/themed"
+import { ScreensParams, Webtoon } from "../../types"
+import { Pressable } from '@gluestack-ui/themed';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 interface MediumCardProps {
     webtoon: Webtoon;
 }
 
 export default function MediumCard({ webtoon }: MediumCardProps) {
-  return (
+
+    const navigation = useNavigation<NavigationProp<ScreensParams>>();
+    return (
     <HStack style={{borderWidth: 0.3, borderColor: 'gray'}} bg='$backgroundDark950'>
         <Image
             alt={webtoon.title}
@@ -16,10 +20,14 @@ export default function MediumCard({ webtoon }: MediumCardProps) {
             source ={{
                 uri: webtoon.img,
             }}
-            // borderTopLeftRadius={5}
-            // borderBottomLeftRadius={5}
         />
-        <VStack width={300} marginLeft={15} marginTop={15}>
+        <Pressable
+            justifyContent='center'
+            alignItems='center'
+            pb={10}
+            pl={10}
+            onPress={() => navigation.navigate('Detail', { webtoon })}
+        >
             <View>
                 <Text size='sm' color='$white' fontWeight='$bold'>{webtoon.title}</Text>
                 <Text size='xs' color='$white' >{webtoon.author}</Text>
@@ -28,7 +36,7 @@ export default function MediumCard({ webtoon }: MediumCardProps) {
                     <Text size='xs' color='$white' marginLeft={5}  >{webtoon.fanCount}</Text>
                 </HStack>
             </View>
-        </VStack>
+        </Pressable>
     </HStack>
   );
 }
