@@ -1,5 +1,5 @@
 import { config } from "@gluestack-ui/config"
-import { GluestackUIProvider, StatusBar, SafeAreaView } from "@gluestack-ui/themed"
+import { GluestackUIProvider, StatusBar, SafeAreaView, View } from "@gluestack-ui/themed"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
@@ -11,6 +11,7 @@ import DetailHeader from "./components/Header/DetailHeader";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import WebtoonDetailScreen from "./screens/WebtoonDetailScreen";
 import MyScreen from "./screens/MyScreen";
+import WebtoonScreen from "./screens/WebtoonScreen";
 
 const queryClient = new QueryClient();
 const Stack = createStackNavigator<ScreensParams>(); // 라우트 타입 지정(필수)
@@ -27,7 +28,7 @@ function Tabs() {
     >
       <Tab.Screen 
         name='Home'
-        component={HomeScreen}
+        component={WebtoonScreen}
         options={{
           tabBarIcon: ({ color, size })=> (
             <Ionicons name='list' size={size} color={color} />
@@ -52,7 +53,7 @@ export default function App() {
   <QueryClientProvider client={queryClient}>
    <GluestackUIProvider config={config}>
     <StatusBar barStyle='light-content' />
-      <SafeAreaView flex={1} backgroundColor='$backgroundDark950'>
+      <View flex={1} backgroundColor='$backgroundDark950'>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='Main' component={Tabs} />
@@ -65,7 +66,8 @@ export default function App() {
             }}/>
           </Stack.Navigator>
         </NavigationContainer>
-      </SafeAreaView>
+        </View>
+      <SafeAreaView bg='$backgroundDark950' />
    </GluestackUIProvider>
   </QueryClientProvider>
   )
