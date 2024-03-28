@@ -10,13 +10,15 @@ const fetchWebtoons = async () => { // 비동기 함수, promise 반환, async �
 }
 
 export default function MySwiper() {
-    const { data } = useQuery<WebtoonResponse> ({
+    const { data } = useQuery<WebtoonResponse> ({ // Webtoon 배열
         queryKey: ['https://korea-webtoon-api.herokuapp.com'], // 쿼리 식별하는 고유한 키
         queryFn: fetchWebtoons, // 쿼리를 실행하는 비동기 함수
     });
 
+  console.log(data);
+
   return (
-    <Swiper showsButtons={false}>
+    <Swiper showsButtons={false} removeClippedSubviews={true} >
         { data ? data.webtoons.map((webtoon) => ( // 배열 내의 모든 요소 각각 호출
         <LargeCard key={webtoon.webtoonId} webtoon={webtoon} />
         )): []}
