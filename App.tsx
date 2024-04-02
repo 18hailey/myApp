@@ -52,7 +52,7 @@ export default function App() {
   return (
   <QueryClientProvider client={queryClient}>
    <GluestackUIProvider config={config}>
-    <StatusBar barStyle='light-content' />
+    <StatusBar barStyle='dark-content' />
       <View flex={1} backgroundColor='$backgroundDark950'>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>

@@ -1,5 +1,5 @@
 export const DayArray = [
-    {key: 'daily', title: '매일'},
+    {key: 'dailyPlus', title: '매일'},
     {key: 'mon', title: '월'},
     {key: 'tue', title: '화'},
     {key: 'wed', title: '수'},

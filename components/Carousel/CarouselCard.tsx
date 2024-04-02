@@ -1,8 +1,9 @@
 import  React  from 'react'
-import { Box } from "@gluestack-ui/themed"
+import { Box, VStack } from "@gluestack-ui/themed"
 import { TripleWebtoon  } from "../../types"
 import { Image } from 'expo-image';
 import convertUrl from '../../utils/convertUrl';
+import { Text } from '@gluestack-ui/themed';
 
 interface LargeCardProps {
     webtoon: TripleWebtoon;
@@ -41,7 +42,12 @@ export default function CarouselCard({ webtoon }: LargeCardProps) {
                 }}>
             </Image>
         </Box>
+        <Box pl={20} pb={20}>
+            <Text size='xl' bold={true} bg='$backgroundDark900' alignSelf='flex-start' color='white'>{webtoon.title}</Text>
+            <Text size='md'>{webtoon.displayAuthor}</Text>
+        </Box>
    </Box>
+   
   );
 }
 

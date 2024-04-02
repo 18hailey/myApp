@@ -31,6 +31,7 @@ export interface WebtoonResponse {
 export interface Author {
     id: number,
     name: string
+    blogUrl? : string
 }
 
 export interface TripleWebtoon {
@@ -66,4 +67,29 @@ export interface TagList {
     tagName: string,
     urlPath: string,
     curationType: string
+}
+
+export interface WeekDayWebtoonResponse {
+    titleList: WeekDayWebtoon[]
+}
+
+export interface WeekDayWebtoon {
+    titleId: number,
+    titleName: string,
+    author: string,
+    writers: Author[],
+    painters: Author[],
+    novelOriginAuthors: Author[],
+    thumbnailUrl: string,
+    up: boolean,
+    rest: boolean,
+    bm: boolean,
+    adult: boolean,
+    starScore: number,
+    viewCount: number,
+    openToday: boolean,
+    potenUp: boolean,
+    bestChallengeLevelUp: boolean,
+    finish: boolean,
+    new: boolean
 }
