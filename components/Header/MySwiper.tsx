@@ -18,10 +18,14 @@ export default function MySwiper() {
   console.log(data);
 
   return (
-    <Swiper showsButtons={false} removeClippedSubviews={true} >
-        { data ? data.webtoons.map((webtoon) => ( // 배열 내의 모든 요소 각각 호출
+    <>
+    {data && (
+    <Swiper showsButtons={false}>
+        { data.webtoons.map((webtoon) => ( // 배열 내의 모든 요소 각각 호출
         <LargeCard key={webtoon.webtoonId} webtoon={webtoon} />
-        )): []}
+        ))}
     </Swiper>
+    )}
+    </>
   );
 }
