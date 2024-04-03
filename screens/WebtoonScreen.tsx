@@ -7,9 +7,10 @@ import { useState } from "react";
 import { DayArray } from "../constants";
 import WeekDayList from "../components/WeekDay/WeekDayList";
 
+
 export default function WebtoonScreen() {   
     const [index, setIndex] = useState(0);
-    
+
     const navigation = useNavigation<NavigationProp<ScreensParams>>();
     return (
     <VStack w='$full' h='$full' bg='$backgroundDark950'>
@@ -20,7 +21,9 @@ export default function WebtoonScreen() {
         <TabView
             navigationState={{ index, routes: DayArray }}
             renderScene={(route) => {
-                return <WeekDayList type={route.route.key} />;
+                return (
+                    <WeekDayList type={route.route.key} /> 
+                );
             }}
             onIndexChange={setIndex}
             renderTabBar= {(props) => <TabBar {...props} 

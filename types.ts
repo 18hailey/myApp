@@ -16,7 +16,12 @@ export type CounterScreenParams = {
 export type ScreensParams = {
     Main: undefined,
     Search: undefined,
-    Detail: {webtoon: Webtoon}
+    Detail: {webtoon?: Webtoon}
+};
+
+export type DetailScreensParams = {
+    Main: undefined,
+    Detail: {titleId: number}
 };
 
 export type TabScreenParams = {
@@ -92,4 +97,97 @@ export interface WeekDayWebtoon {
     bestChallengeLevelUp: boolean,
     finish: boolean,
     new: boolean
+}
+
+export interface Author {
+    artistId: number,
+    name: string,
+    artistTypeList: string[],
+    profileBadge: string,
+    profileImageUrl: string,
+    profilePageUrl: string,
+    postDescription: string
+}
+
+export interface Tag {
+    id: number,
+    tagName: string,
+    urlPath: string,
+    curationType: string
+}
+
+export interface WebtoonDetail {
+    titleId: number,
+    thumbnailUrl: string,
+    posterThumbnailUrl: string,
+    sharedThumbnailUrl: string,
+    titleName: string,
+    contentsNo: number,
+    webtoonLevelCode: string,
+    rest: boolean,
+    finished: boolean,
+    dailyPass: boolean,
+    publishDayOfWeekList: string[],
+    chargeBestChallenge: boolean,
+    communityArtists: Author[],
+    synopsis: string,
+    favorite: boolean,
+    favoriteCount: number,
+    age: {
+        type: string,
+        description: string;
+    },
+    publishDescription: string,
+    curationTagList: Tag[],
+    thumbnailBadgeList: [],
+    adBannerList: [],
+    firstArticle: {
+        no: number,
+        subtitle: string,
+        charge: boolean
+    },
+    gfpAdCustomParam: {
+        titleId: number,
+        webtoonLevelCode: string,
+        titleName: string,
+        displayAuthor: string,
+        cpid: string,
+        cpName: string,
+        genreTypes: string[],
+        rankGenreTypes: string[],
+        tags: string[],
+        weekdays: string[],
+        finishedYn: string,
+        adultYn: string,
+        dailyPlusYn: string,
+        dailyFreeYn: string
+    },
+    new: boolean
+}
+
+export interface ArticleList {
+    no: number,
+    thumbnailUrl: string,
+    subtitle: string,
+    starScore: number,
+    bgm: boolean,
+    up: boolean,
+    charge: boolean,
+    serviceDateDescription: string,
+    volumeNo: number,
+    hasReadLog: boolean,
+    recentlyReadLog: boolean,
+    thumbnailClock: boolean,
+    thumbnailLock: boolean
+}
+
+export interface Article {
+    titleId: number,
+    webtoonLevelCode: string,
+    totalCount: number,
+    contentsNo: number,
+    finished: boolean,
+    dailyPass: boolean,
+    chargeBestChallenge: boolean,
+    articleList: ArticleList[]
 }

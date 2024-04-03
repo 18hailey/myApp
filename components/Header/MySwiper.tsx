@@ -15,7 +15,7 @@ export default function MySwiper() {
         queryFn: fetchWebtoons, // 쿼리를 실행하는 비동기 함수
     });
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

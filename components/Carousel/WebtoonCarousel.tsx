@@ -1,7 +1,7 @@
 import  React  from 'react'
 import { useQuery } from "@tanstack/react-query"
 import Swiper from "react-native-swiper"
-import { TripleWebtoonResponse, WebtoonResponse } from '../../types'
+import { TripleWebtoonResponse } from '../../types'
 import CarouselCard from '../Carousel/CarouselCard'
 import { Center } from '@gluestack-ui/themed'
 
@@ -23,7 +23,7 @@ export default function WebtoonCarousel() {
     <Center flex={1} w='$full' h='$full'>
       { webtoons.length > 0 && (<Swiper showsButtons={false}>
         {webtoons?.map((webtoon) => ( 
-          <CarouselCard  webtoon={webtoon} />
+          <CarouselCard key={webtoon.titleId} webtoon={webtoon} />
       ))}
       </Swiper>
       )}
