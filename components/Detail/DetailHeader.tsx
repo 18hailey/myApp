@@ -25,9 +25,7 @@ export default function DetailHeader({titleId}: DetailHeaderProp) {
         queryKey: ['fetchArticleList', titleId], // 쿼리 식별하는 고유한 키
         queryFn: () => fetchArticleList(titleId), // 쿼리를 실행하는 비동기 함수
     });
-
-    // console.log(data?.titleName);
-
+ 
     if(!data) {
         return;
     }
@@ -42,7 +40,7 @@ export default function DetailHeader({titleId}: DetailHeaderProp) {
                 style={{ width: width, height: width }}
             ></Image>
             <Pressable onPress={() => alert('로그인 후 다시 시도해 주세요.')}>
-                <Center width={120} height={30} borderRadius={30} bg='$green600' bottom={50}>
+                <Center width={120} height={30} borderRadius={30} bg='$green600' bottom={40}>
                     <Text color='$white' size='sm'>{`+ 관심 ${data.favoriteCount.toLocaleString('ko-KO')}`}</Text>
                 </Center>
             </Pressable>

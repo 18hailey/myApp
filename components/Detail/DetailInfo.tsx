@@ -18,7 +18,7 @@ export default function DetailInfo({synopsis, description}: DetailInfoProps) {
         <HStack>
             { isOpen ? (
             <View>
-                <Text key={'up'} color='$secondary400' size='sm' isTruncated={!isOpen} width={width-50} bg='$secondary800'>{synopsis}</Text>
+                <Text key={'up'} color='$secondary400' size='sm' isTruncated={!isOpen} width={width-50} >{synopsis}</Text>
                 <HStack gap={5} >
                     <Text color='$secondary400' size='sm'>연령</Text>
                     <Text color='$backgroundLight100' size='sm' >{`${description}`}</Text>
