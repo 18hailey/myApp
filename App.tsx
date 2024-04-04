@@ -4,14 +4,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 import { ScreensParams, TabScreenParams } from "./types";
-import HomeScreen from "./screens/HomeScreen"
-import SearchScreen from "./screens/SearchScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import DetailHeader from "./components/Header/DetailHeader";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import WebtoonDetailScreen from "./screens/WebtoonDetailScreen";
 import MyScreen from "./screens/MyScreen";
 import WebtoonScreen from "./screens/WebtoonScreen";
+import DetailScreen from "./screens/DetailScreen";
 
 const queryClient = new QueryClient();
 const Stack = createStackNavigator<ScreensParams>(); // 라우트 타입 지정(필수)
@@ -52,18 +49,15 @@ export default function App() {
   return (
   <QueryClientProvider client={queryClient}>
    <GluestackUIProvider config={config}>
-    <StatusBar barStyle='dark-content' />
+    <StatusBar barStyle='light-content' />
       <View flex={1} backgroundColor='$backgroundDark950'>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='Main' component={Tabs} />
-            <Stack.Screen name='Search' component={SearchScreen} />
             <Stack.Screen
               name='Detail' 
-              component={WebtoonDetailScreen}
-              options={{
-                headerShown: true, header: () => <DetailHeader />
-            }}/>
+              component={DetailScreen}
+            />
           </Stack.Navigator>
         </NavigationContainer>
         </View>

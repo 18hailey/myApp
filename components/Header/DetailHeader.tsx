@@ -12,6 +12,5 @@ export default function DetailHeader() {
             <Ionicons name='chevron-back-outline' size={30} color='red'/>
         </Pressable>
     </HStack>
-    
     )
 }

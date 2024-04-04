@@ -15,13 +15,17 @@ export default function MySwiper() {
         queryFn: fetchWebtoons, // 쿼리를 실행하는 비동기 함수
     });
 
-  console.log(data);
+  // console.log(data);
 
   return (
-    <Swiper showsButtons={false} removeClippedSubviews={true} >
-        { data ? data.webtoons.map((webtoon) => ( // 배열 내의 모든 요소 각각 호출
+    <>
+    {data && (
+    <Swiper showsButtons={false}>
+        { data.webtoons.map((webtoon) => ( // 배열 내의 모든 요소 각각 호출
         <LargeCard key={webtoon.webtoonId} webtoon={webtoon} />
-        )): []}
+        ))}
     </Swiper>
+    )}
+    </>
   );
 }

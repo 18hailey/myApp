@@ -1,5 +1,5 @@
 import  React  from 'react'
-import { Box, VStack } from "@gluestack-ui/themed"
+import { Box } from "@gluestack-ui/themed"
 import { TripleWebtoon  } from "../../types"
 import { Image } from 'expo-image';
 import convertUrl from '../../utils/convertUrl';
