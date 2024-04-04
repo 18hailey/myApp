@@ -1,5 +1,5 @@
 import { Center, HStack, VStack } from "@gluestack-ui/themed";
-import { DetailScreensParams, ScreensParams, WeekDayWebtoon } from "../../types";
+import { DetailScreensParams, WeekDayWebtoon } from "../../types";
 import { Image } from "expo-image";
 import convertUrl from "../../utils/convertUrl";
 import { Dimensions, Pressable } from "react-native";
