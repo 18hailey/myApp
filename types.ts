@@ -191,3 +191,47 @@ export interface Article {
     chargeBestChallenge: boolean,
     articleList: ArticleList[]
 }
+
+export interface ArticleResponse {
+    titleId: number,
+    webtoonLevelCode: string,
+    totalCount: number,
+    contentsNo: number,
+    finished: boolean,
+    dailyPass: boolean,
+    chargeBestChallenge: boolean,
+    articleList?: WebtoonArticleCard[],
+    chargeFolderArticleList: WebtoonArticleCard[],
+    chargeFolderUp: boolean,
+    pageInfo: {
+        totalRows: number,
+        pageSize: number,
+        indexSize: number,
+        page: number,
+        rawPage: number,
+        endRowNum: number,
+        lastPage: number,
+        totalPages: number,
+        startRowNum: number,
+        firstPage: number,
+        prevPage: number,
+        nextPage: number
+    },
+    sort: string
+}
+
+export interface WebtoonArticleCard {
+    no: number,
+    thumbnailUrl: string,
+    subtitle: string,
+    starScore: number,
+    bgm: boolean,
+    up: boolean,
+    charge: boolean,
+    serviceDateDescription: string,
+    volumeNo: number,
+    hasReadLog: boolean,
+    recentlyReadLog: boolean,
+    thumbnailClock: boolean,
+    thumbnailLock: boolean
+}
