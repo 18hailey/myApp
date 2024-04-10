@@ -23,7 +23,12 @@ function Tabs() {
       tabBarActiveTintColor: '#e11d48',
       tabBarActiveBackgroundColor: '#171717',
       tabBarInactiveBackgroundColor: '#171717',
-      }}
+      tabBarStyle: {
+        borderTopColor: '#171717',
+        backgroundColor: '#171717',
+        // position: 'absolute'
+      }
+    }}
     >
       <Tab.Screen 
         name='Home'
@@ -52,7 +57,7 @@ export default function App() {
   <QueryClientProvider client={queryClient}>
    <GluestackUIProvider config={config}>
     <StatusBar barStyle='dark-content' />
-      <View flex={1} backgroundColor='$backgroundDark950'>
+      <View flex={1} backgroundColor='$backgroundDark950' >
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='Main' component={Tabs} />
@@ -68,7 +73,7 @@ export default function App() {
               options={{headerShown: true, header: () => <Header color='$secondary400' /> }} />
           </Stack.Navigator>
         </NavigationContainer>
-        </View>
+      </View>
       {/* <SafeAreaView bg='$backgroundDark950' /> */}
    </GluestackUIProvider>
   </QueryClientProvider>

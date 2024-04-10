@@ -9,7 +9,7 @@ const fetchViewImages = async () => { // 비동기 함수, promise 반환, async
     const urls = Array.from({length: 82}, (_, i) => i + 1).map(
         (number) => `https://image-comic.pstatic.net/webtoon/758037/137/20240302095428_f9cac3b8efc03023672993239611ccce_IMAG01_${number}.jpg`
     )
-    console.log(urls);
+    // console.log(urls);
 
     return {
         imageUrls: urls,
