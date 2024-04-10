@@ -3,16 +3,17 @@ import { GluestackUIProvider, StatusBar, SafeAreaView, View } from "@gluestack-u
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
-import { ScreensParams, TabScreenParams } from "./types";
+import { DetailScreensParams, TabScreenParams } from "./types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MyScreen from "./screens/MyScreen";
 import WebtoonScreen from "./screens/WebtoonScreen";
 import DetailScreen from "./screens/DetailScreen";
 import Header from "./components/Detail/Header";
+import ViewerScreen from "./screens/ViewerScreen";
 
 const queryClient = new QueryClient();
-const Stack = createStackNavigator<ScreensParams>(); // 라우트 타입 지정(필수)
+const Stack = createStackNavigator<DetailScreensParams>(); // 라우트 타입 지정(필수)
 const Tab = createBottomTabNavigator<TabScreenParams>();
 
 function Tabs() {
@@ -58,13 +59,17 @@ export default function App() {
             <Stack.Screen
               name='Detail' 
               component={DetailScreen}
-              options={{ headerShown: true, header: () => <Header /> }}
+              options={{ headerShown: true, header: () => <Header color='$backgroundLight100'/> }}
 
             />
+            <Stack.Screen 
+              name='Viewer'
+              component={ViewerScreen}
+              options={{headerShown: true, header: () => <Header color='$secondary400' /> }} />
           </Stack.Navigator>
         </NavigationContainer>
         </View>
-      <SafeAreaView bg='$backgroundDark950' />
+      {/* <SafeAreaView bg='$backgroundDark950' /> */}
    </GluestackUIProvider>
   </QueryClientProvider>
   )

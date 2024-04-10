@@ -21,7 +21,8 @@ export type ScreensParams = {
 
 export type DetailScreensParams = {
     Main: undefined,
-    Detail: {titleId: number}
+    Detail: {titleId: number},
+    Viewer: {article: WebtoonArticleCard}
 };
 
 export type TabScreenParams = {
@@ -234,4 +235,8 @@ export interface WebtoonArticleCard {
     recentlyReadLog: boolean,
     thumbnailClock: boolean,
     thumbnailLock: boolean
+}
+
+export interface ViewerResponse {
+    imageUrls: string[]
 }
