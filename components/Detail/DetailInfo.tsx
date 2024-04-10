@@ -12,7 +12,7 @@ interface DetailInfoProps {
 const width = Dimensions.get('window').width;
 
 export default function DetailInfo({synopsis, description}: DetailInfoProps) {
-    const [isOpen, setIsOpen] =  useState(false); // (isOpen=false) == 밑으로 세부사항 보인다
+    const [isOpen, setIsOpen] =  useState(false); // (isOpen=true) == 밑으로 세부사항 보인다
     return (  
     <VStack> 
         <HStack>

@@ -31,6 +31,8 @@
 //             : lastPage.pageInfo.page + 1,
 //       });
 
+// console.log(data?.pages[0]);
+
 //     return (
 //         <VStack>
 //             <Pressable onPress={() => fetchNextPage()}>
